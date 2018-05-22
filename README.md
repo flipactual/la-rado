@@ -1,4 +1,3 @@
-# La Rado 
+# la-rado · [![Travis](https://img.shields.io/travis/flipactual/la-rado.svg?style=flat-square)](https://travis-ci.org/flipactual/la-rado/)
 
-[![flipactual](https://img.shields.io/badge/😋-flipactual-218AC7.svg?style=flat-square)](https://www.flipactual.com/)
-[![Travis](https://img.shields.io/travis/flipactual/La Rado.svg?style=flat-square)](https://travis-ci.org/flipactual/La Rado/)
+> State management... again
