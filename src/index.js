@@ -1,18 +1,6 @@
 const STATE = Symbol('STATE');
 const SUBSCRIBERS = Symbol('SUBSCRIBERS');
 
-/** 
- * @name Subscriber
- * @function
- * @param {Object} state - The updated state
- */
-
-/** 
- * @name Action 
- * @function
- * @param {Object} state - The current state
- */
-
 /** Class representing a store */
 class LaRado {
   /**
@@ -29,6 +17,7 @@ class LaRado {
    */
   subscribe(subscriber) {
     this[SUBSCRIBERS] = [...this[SUBSCRIBERS], subscriber];
+    subscriber(this[STATE]);
   }
   /**
    * Updates all subscribers with the new state
@@ -41,3 +30,15 @@ class LaRado {
 }
 
 module.exports = LaRado;
+
+/** 
+ * @name Subscriber
+ * @function
+ * @param {Object} state - The updated state
+ */
+
+/** 
+ * @name Action 
+ * @function
+ * @param {Object} state - The current state
+ */
