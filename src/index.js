@@ -5,7 +5,7 @@ const SUBSCRIBERS = Symbol('SUBSCRIBERS');
 class LaRado {
   /**
    * Create a store
-   * @param {object} state - The initial state
+   * @param {Object} state - The initial state
    */
   constructor(state = {}) {
     this[STATE] = state;
