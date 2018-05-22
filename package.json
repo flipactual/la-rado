@@ -1,0 +1,37 @@
+{
+  "name": "la-rado",
+  "version": "1.0.0-rc.1",
+  "description": "State management... again",
+  "repository": "flipactual/la-rado",
+  "author": "Flip",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "scripts": {
+    "commitmsg": "make commitmsg",
+    "precommit": "make precommit",
+    "prepublish": "make prepublish"
+  },
+  "devDependencies": {
+    "@commitlint/config-angular": "4.3.0",
+    "babel-eslint": "7.1.1",
+    "commitlint": "5.0.1",
+    "documentation": "4.0.0-rc.1",
+    "eslint": "3.16.0",
+    "eslint-config-airbnb-base": "11.1.0",
+    "eslint-config-prettier": "2.6.0",
+    "eslint-plugin-flowtype": "2.37.0",
+    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-jest": "20.0.0",
+    "eslint-plugin-prettier": "2.3.1",
+    "flow-bin": "0.45.0",
+    "flow-remove-types": "1.2.1",
+    "husky": "0.14.3",
+    "jest": "20.0.0",
+    "jest-flow-transform": "1.0.1",
+    "lint-staged": "3.4.1",
+    "prettier": "1.7.3"
+  }
+}
