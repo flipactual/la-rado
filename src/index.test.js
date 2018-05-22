@@ -48,7 +48,7 @@ describe('LaRado', () => {
     // Perform many updates
     await Promise.all(
       actions.map(
-        async action =>
+        action =>
           new Promise(resolve =>
             setTimeout(() => {
               Store.update(action);
