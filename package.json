@@ -7,7 +7,7 @@
   "license": "MIT",
   "main": "lib/index.js",
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=carbon"
   },
   "scripts": {
     "commitmsg": "make commitmsg",
