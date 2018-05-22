@@ -30,7 +30,7 @@ describe('LaRado', () => {
   it('handles many asynchronous updates', async () => {
     // Setup properties
     const properties = Array(...Array(1e3)).map(() =>
-      crypto.randomBytes(1e1).toString('hex')
+      crypto.randomBytes(20).toString('hex')
     );
     // Setup initial state
     const INITIAL_STATE = properties.reduce(
