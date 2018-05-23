@@ -15,6 +15,8 @@ compile:
 documentation:
 	yarn documentation build src/** -f html -o docs 
 	git add docs
+	yarn emdaer 
+	git add *.md
 lint:
 	yarn eslint .
 lint-staged:
