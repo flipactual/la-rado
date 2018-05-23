@@ -16,10 +16,13 @@ const toggleOn = state => ({ ...state, on: !state.on });
 const Store = new LaRado(INITIAL_STATE);
 // Setup subscription
 const subscriber = console.log;
-Store.subscribe(subscriber);
+const cancel = Store.subscribe(subscriber);
 // => { on: false }
 
 // Perform an update
 Store.update(toggleOn);
 // => { on: true }
+
+// Cancel the subscription
+cancel();
 ```
