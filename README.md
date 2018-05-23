@@ -12,6 +12,7 @@ const Store = new LaRado(INITIAL_STATE);
 // Setup subscription
 const subscriber = console.log;
 Store.subscribe(subscriber);
+// => { on: false }
 
 // Perform an update
 Store.update(toggleOn);
