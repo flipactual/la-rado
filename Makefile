@@ -13,6 +13,8 @@ commitlint-ci:
 compile:
 	yarn flow-remove-types -p src -i .test.js -d lib
 documentation:
+	yarn emdaer
+	git add *.md
 	yarn documentation build src/** -f html -o docs 
 	git add docs
 lint:
