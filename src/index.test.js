@@ -21,11 +21,37 @@ describe('LaRado', () => {
 
     // Perform an update
     Store.update(toggleOn);
+    expect(subscriber).toHaveBeenLastCalledWith({ on: true });
 
     // Toggle it a few times to be sure
-    expect(subscriber).toHaveBeenLastCalledWith({ on: true });
     Store.update(toggleOn);
     expect(subscriber).toHaveBeenLastCalledWith({ on: false });
+    Store.update(toggleOn);
+    expect(subscriber).toHaveBeenLastCalledWith({ on: true });
+  });
+  it('has cancelable subscribers', () => {
+    expect.assertions(3);
+    // Setup initial state
+    const INITIAL_STATE = { on: false };
+    // Setup actions
+    const toggleOn = state => ({ ...state, on: !state.on });
+    // Setup store
+    const Store = new LaRado(INITIAL_STATE);
+    // Setup subscription
+    const subscriber = jest.fn();
+    const cancel = Store.subscribe(subscriber);
+
+    // Confirm that subscriber is called when added
+    expect(subscriber).toHaveBeenLastCalledWith({ on: false });
+
+    // Perform an update
+    Store.update(toggleOn);
+    expect(subscriber).toHaveBeenLastCalledWith({ on: true });
+
+    // Unsubscribe
+    cancel();
+
+    // Perform another update
     Store.update(toggleOn);
     expect(subscriber).toHaveBeenLastCalledWith({ on: true });
   });

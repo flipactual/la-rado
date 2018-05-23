@@ -35,6 +35,11 @@ class LaRado {
   subscribe(subscriber) {
     this[SUBSCRIBERS] = [...this[SUBSCRIBERS], subscriber];
     subscriber(this[STATE]);
+    return () => {
+      this[SUBSCRIBERS] = [
+        ...this[SUBSCRIBERS].filter(fn => fn !== subscriber),
+      ];
+    };
   }
   /**
    * Perform an action on the state and update all subscribers with the
