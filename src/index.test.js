@@ -30,7 +30,7 @@ describe('LaRado', () => {
     expect(subscriber).toHaveBeenLastCalledWith({ on: true });
   });
   it('has cancelable subscribers', () => {
-    expect.assertions(3);
+    expect.assertions(5);
     // Setup initial state
     const INITIAL_STATE = { on: false };
     // Setup actions
@@ -38,22 +38,28 @@ describe('LaRado', () => {
     // Setup store
     const Store = new LaRado(INITIAL_STATE);
     // Setup subscription
-    const subscriber = jest.fn();
-    const cancel = Store.subscribe(subscriber);
+    const subscriber1 = jest.fn();
+    const subscriber2 = jest.fn();
+    const subscriber3 = jest.fn();
+    Store.subscribe(subscriber1);
+    const cancel = Store.subscribe(subscriber2);
+    Store.subscribe(subscriber3);
 
     // Confirm that subscriber is called when added
-    expect(subscriber).toHaveBeenLastCalledWith({ on: false });
+    expect(subscriber2).toHaveBeenLastCalledWith({ on: false });
 
     // Perform an update
     Store.update(toggleOn);
-    expect(subscriber).toHaveBeenLastCalledWith({ on: true });
+    expect(subscriber2).toHaveBeenLastCalledWith({ on: true });
 
     // Unsubscribe
     cancel();
 
     // Perform another update
     Store.update(toggleOn);
-    expect(subscriber).toHaveBeenLastCalledWith({ on: true });
+    expect(subscriber1).toHaveBeenLastCalledWith({ on: false });
+    expect(subscriber2).toHaveBeenLastCalledWith({ on: true });
+    expect(subscriber3).toHaveBeenLastCalledWith({ on: false });
   });
   it('handles many asynchronous updates', testDone => {
     expect.assertions(2);
