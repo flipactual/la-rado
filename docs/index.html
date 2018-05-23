@@ -100,10 +100,12 @@
   </div>
   
 
-  <p>Class representing a store</p>
+  <p>Create a store</p>
+<p>The initial state likely should describe the full intended shape of the
+store</p>
 
 
-  <div class='pre p1 fill-light mt0'>new LaRado(state: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+  <div class='pre p1 fill-light mt0'>new LaRado(state: any)</div>
   
   
 
@@ -120,7 +122,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>state</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+            <span class='code bold'>state</span> <code class='quiet'>(any
             = <code>{}</code>)</code>
 	    The initial state
 
@@ -137,6 +139,13 @@
 
   
 
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> INITIAL_STATE = { <span class="hljs-attr">on</span>: <span class="hljs-literal">false</span> };
+<span class="hljs-keyword">const</span> Store = <span class="hljs-keyword">new</span> LaRado(INITIAL_STATE);</pre>
+    
   
 
   
@@ -158,6 +167,9 @@
   
 
   <p>Add a subscriber to the store</p>
+<p>Subscribers are called with the current state A. when they are first
+passed to the subscribe method and B. whenever an action is executed on the
+store via the update method</p>
 
 
   <div class='pre p1 fill-light mt0'>subscribe(subscriber: <a href="#subscriber">Subscriber</a>)</div>
@@ -194,6 +206,13 @@
   
 
   
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> subscriber = <span class="hljs-built_in">console</span>.log;
+Store.subscribe(subscriber);</pre>
+    
+  
 
   
 
@@ -217,7 +236,10 @@
 
   
 
-  <p>Updates all subscribers with the new state</p>
+  <p>Perform an action on the state and update all subscribers with the
+new state</p>
+<p>Actions passed to the update method are called with the current state and
+return the new state</p>
 
 
   <div class='pre p1 fill-light mt0'>update(action: <a href="#action">Action</a>)</div>
@@ -253,6 +275,13 @@
 
   
 
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> toggleOn = <span class="hljs-function"><span class="hljs-params">state</span> =&gt;</span> ({ ...state, <span class="hljs-attr">on</span>: !state.on });
+Store.update(toggleOn);</pre>
+    
   
 
   
@@ -290,7 +319,7 @@
 
   
 
-  <div class='pre p1 fill-light mt0'>Subscriber(state: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+  <div class='pre p1 fill-light mt0'>Subscriber(state: any)</div>
   
   
 
@@ -307,7 +336,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>state</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+            <span class='code bold'>state</span> <code class='quiet'>(any)</code>
 	    The updated state
 
           </div>
@@ -350,7 +379,7 @@
 
   
 
-  <div class='pre p1 fill-light mt0'>Action(state: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+  <div class='pre p1 fill-light mt0'>Action(state: any)</div>
   
   
 
@@ -367,7 +396,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>state</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+            <span class='code bold'>state</span> <code class='quiet'>(any)</code>
 	    The current state
 
           </div>

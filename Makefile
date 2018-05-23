@@ -6,20 +6,20 @@ prepublish: compile
 precommit: lint-staged type test documentation
 
 commitlint:
-	./node_modules/.bin/commitlint -e ${GIT_PARAMS}
+	yarn commitlint -e ${GIT_PARAMS}
 commitlint-ci:
-	./node_modules/.bin/commitlint --from="${TRAVIS_BRANCH}" --to="${TRAVIS_COMMIT}"
-	./node_modules/.bin/commitlint --from=${TRAVIS_COMMIT}
+	yarn commitlint --from="${TRAVIS_BRANCH}" --to="${TRAVIS_COMMIT}"
+	yarn commitlint --from=${TRAVIS_COMMIT}
 compile:
-	./node_modules/.bin/flow-remove-types -p src -i .test.js -d lib
+	yarn flow-remove-types -p src -i .test.js -d lib
 documentation:
-	./node_modules/.bin/documentation build src/** -f html -o docs
+	yarn documentation build src/** -f html -o docs 
 	git add docs
 lint:
-	./node_modules/.bin/eslint .
+	yarn eslint .
 lint-staged:
-	./node_modules/.bin/lint-staged
+	yarn lint-staged
 test:
-	./node_modules/.bin/jest
+	yarn jest
 type:
-	./node_modules/.bin/flow status
+	yarn flow status
