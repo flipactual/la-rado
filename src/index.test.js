@@ -1,9 +1,11 @@
 const crypto = require('crypto');
+const Future = require('fluture');
 
 const LaRado = require('.');
 
 describe('LaRado', () => {
   it('dispatches after actions', () => {
+    expect.assertions(4);
     // Setup initial state
     const INITIAL_STATE = { on: false };
     // Setup actions
@@ -27,9 +29,11 @@ describe('LaRado', () => {
     Store.update(toggleOn);
     expect(subscriber).toHaveBeenLastCalledWith({ on: true });
   });
-  it('handles many asynchronous updates', async () => {
+  it('handles many asynchronous updates', testDone => {
+    expect.assertions(2);
+    const UPDATE_COUNT = 1e3;
     // Setup properties
-    const properties = Array(...Array(1e3)).map(() =>
+    const properties = Array(...Array(UPDATE_COUNT)).map(() =>
       crypto.randomBytes(20).toString('hex')
     );
     // Setup initial state
@@ -46,21 +50,23 @@ describe('LaRado', () => {
     Store.subscribe(subscriber);
 
     // Perform many updates
-    await Promise.all(
-      actions.map(
-        action =>
-          new Promise(resolve =>
-            setTimeout(() => {
-              Store.update(action);
-              resolve();
-            }, Math.floor(Math.random() * Math.floor(10)))
-          )
+    Future.parallel(
+      UPDATE_COUNT,
+      actions.map(action =>
+        Future.node(done =>
+          setTimeout(() => {
+            Store.update(action);
+            done();
+          }, Math.floor(Math.random() * Math.floor(10)))
+        )
       )
-    );
-
-    // Confirm that subscriber is called when added
-    expect(subscriber).toHaveBeenLastCalledWith(
-      properties.reduce((acc, val) => ({ ...acc, [val]: true }), {})
-    );
+    ).fork(jest.fn(), () => {
+      // Confirm that subscriber is called when added
+      expect(subscriber).toHaveBeenCalledTimes(UPDATE_COUNT + 1);
+      expect(subscriber).toHaveBeenLastCalledWith(
+        properties.reduce((acc, val) => ({ ...acc, [val]: true }), {})
+      );
+      testDone();
+    });
   });
 });
