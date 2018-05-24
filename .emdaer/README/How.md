@@ -67,3 +67,5 @@ So let's cancel our subscription now that we're done
 ```js
 cancel();
 ```
+
+### 5. [Then read the docs!](https://flipactual.github.io/la-rado/)
