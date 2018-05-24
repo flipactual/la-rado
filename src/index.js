@@ -18,7 +18,7 @@ class LaRado {
    */
   constructor(state = {}) {
     this[STATE] = state;
-    this[SUBSCRIBERS] = [];
+    this[SUBSCRIBERS] = new Set();
   }
   /**
    * Add a subscriber to the store
@@ -36,10 +36,10 @@ class LaRado {
    * cancel();
    */
   subscribe(subscriber) {
-    this[SUBSCRIBERS] = [...this[SUBSCRIBERS], subscriber];
+    this[SUBSCRIBERS].add(subscriber);
     subscriber(this[STATE]);
     return () => {
-      this[SUBSCRIBERS] = this[SUBSCRIBERS].filter(fn => fn !== subscriber);
+      this[SUBSCRIBERS].delete(subscriber);
     };
   }
   /**
