@@ -65,7 +65,7 @@ describe('LaRado', () => {
     expect.assertions(2);
     const UPDATE_COUNT = 1e3;
     // Setup properties
-    const properties = Array(...Array(UPDATE_COUNT)).map(() =>
+    const properties = [...Array(UPDATE_COUNT)].map(() =>
       crypto.randomBytes(20).toString('hex')
     );
     // Setup initial state
