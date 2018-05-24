@@ -5,10 +5,10 @@
 -->
 
 <!--
-  emdaerHash:723ceab46478d7806a08372f1ffe2ccc
+  emdaerHash:7064dc2752d8752c158974331151845f
 -->
 
-<p align="center"><img src="https://raw.githubusercontent.com/flipactual/la-rado/master/banner.svg" alt="La Rado"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/flipactual/la-rado/master/banner.svg?sanitize=true" alt="La Rado"></p>
 
 <h1 id="la-rado-travis-node-npm">la-rado · <a href="https://travis-ci.org/flipactual/la-rado/"><img src="https://img.shields.io/travis/flipactual/la-rado.svg?style=flat-square" alt="Travis"></a> <a href="http://npmjs.com/package/la-rado"><img src="https://img.shields.io/node/v/la-rado.svg?style=flat-square" alt="Node"></a> <a href="http://npmjs.com/package/la-rado"><img src="https://img.shields.io/npm/v/la-rado.svg?style=flat-square" alt="NPM"></a></h1>
 <h2 id="why">Why</h2>
