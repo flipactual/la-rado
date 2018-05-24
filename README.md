@@ -5,7 +5,7 @@
 -->
 
 <!--
-  emdaerHash:b23715d19a5a6c7b83a0afe98298816b
+  emdaerHash:d58ed6db38c6b5e087b9345f2fbef37c
 -->
 
 <p align="center"><img src="banner.svg" alt="La Rado"></p>
@@ -16,9 +16,9 @@
 <p>First of all, I didn’t need to and other options may very well better suit your needs</p>
 <p>But, since you asked:</p>
 <ul>
-<li>🐣 it’s tiny (~.5kB last time I checked) </li>
-<li>🔤 it’s simple (one class whose instances surface only two methods)</li>
-<li>🤯 it’s op af (caveat being that there’s no hand-holding whatsoever)</li>
+<li>:hatching_chick: it’s tiny (~.5kB last time I checked) </li>
+<li>:abc: it’s simple (one class whose instances surface only two methods)</li>
+<li>:rocket: it’s op af (caveat being that there’s no hand-holding whatsoever)</li>
 </ul>
 <h2 id="how">How</h2>
 <p>If you’re wondering how state management can be over-powered…</p>
