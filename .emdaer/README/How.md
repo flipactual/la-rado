@@ -7,7 +7,7 @@ If you're wondering how state management can be over-powered...
 Describe the initial state... may as well save it somewhere, right?
 
 ```js
-const INITIAL_STATE = { on: false };
+const INITIAL_STATE = Object.freeze({ on: false });
 ```
 
 Create the store by passing the initial state into the constructor
