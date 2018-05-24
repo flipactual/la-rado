@@ -1,6 +1,6 @@
 <!--emdaer-p
   - '@emdaer/plugin-image'
-  - src: https://github.com/flipactual/la-rado/raw/master/banner.svg 
+  - src: https://github.com/flipactual/la-rado/raw/master/banner.svg?sanitize=true 
     alt: La Rado
     align: center
 -->
