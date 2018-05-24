@@ -1,28 +1,44 @@
-<p align="center"><img src="banner.svg" alt="La Rado"></p>
+<!--emdaer-p
+  - '@emdaer/plugin-image'
+  - src: banner.svg
+    alt: La Rado
+    align: center
+-->
 
 # <!--emdaer-p
   - '@emdaer/plugin-value-from-package'
   - value: name
---> · [![Travis](https://img.shields.io/travis/flipactual/la-rado.svg?style=flat-square)](https://travis-ci.org/flipactual/la-rado/) [![Node](https://img.shields.io/node/v/la-rado.svg?style=flat-square)](http://npmjs.com/package/la-rado) [![NPM](https://img.shields.io/npm/v/la-rado.svg?style=flat-square)](http://npmjs.com/package/la-rado)
+--> · <!--emdaer-p
+  - '@emdaer/plugin-shields'
+  - shields:
+    - alt: 'Travis'
+      image: 'travis/flipactual/la-rado.svg'
+      link: 'https://travis-ci.org/flipactual/la-rado/'
+      style: 'flat-square'
+    - alt: 'Node'
+      image: 'node/v/la-rado.svg'
+      link: 'http://npmjs.com/package/la-rado'
+      style: 'flat-square'
+    - alt: 'NPM'
+      image: 'npm/v/la-rado.svg'
+      link: 'http://npmjs.com/package/la-rado'
+      style: 'flat-square'
+-->
 
-> State management... again
+<!--emdaer-p
+  - '@emdaer/plugin-import'
+  - path: .emdaer/README/Why.md
+    runEmdaer: true
+-->
 
-```js
-// Setup initial state
-const INITIAL_STATE = { on: false };
-// Setup actions
-const toggleOn = state => ({ ...state, on: !state.on });
-// Setup store
-const Store = new LaRado(INITIAL_STATE);
-// Setup subscription
-const subscriber = console.log;
-const cancel = Store.subscribe(subscriber);
-// => { on: false }
+<!--emdaer-p
+  - '@emdaer/plugin-import'
+  - path: .emdaer/README/How.md
+    runEmdaer: true
+-->
 
-// Perform an update
-Store.update(toggleOn);
-// => { on: true }
+---
 
-// Cancel the subscription
-cancel();
-```
+<!--emdaer-p
+  - '@emdaer/plugin-license-reference'
+-->
