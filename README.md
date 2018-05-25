@@ -5,12 +5,15 @@
 -->
 
 <!--
-  emdaerHash:f9d8febd24d440e544f75af14ed6d0e8
+  emdaerHash:4c728162d38b79d005a56ec548d665eb
 -->
 
 <p align="center"><img src="https://raw.githubusercontent.com/flipactual/la-rado/master/banner.svg?sanitize=true" alt="La Rado"></p>
 
 <h1 id="la-rado-travis-bundlephobia-node-npm">la-rado · <a href="https://travis-ci.org/flipactual/la-rado/"><img src="https://img.shields.io/travis/flipactual/la-rado.svg?style=flat-square" alt="Travis"></a> <a href="https://bundlephobia.com/result?p=la-rado"><img src="https://img.shields.io/bundlephobia/minzip/la-rado.svg?style=flat-square" alt="bundlephobia"></a> <a href="http://npmjs.com/package/la-rado"><img src="https://img.shields.io/node/v/la-rado.svg?style=flat-square" alt="Node"></a> <a href="http://npmjs.com/package/la-rado"><img src="https://img.shields.io/npm/v/la-rado.svg?style=flat-square" alt="NPM"></a></h1>
+<blockquote>
+<p>La Rado is Esperanto for “The Wheel” 😉</p>
+</blockquote>
 <h2 id="why">Why</h2>
 <p>It’s a good question — why did I need to roll my own state management library?</p>
 <p>First of all, I didn’t need to and other options may very well better suit your needs</p>
