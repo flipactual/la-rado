@@ -2,7 +2,7 @@ export FORCE_COLOR = true
 
 ci: commitlint-ci lint type test
 commitmsg: commitlint
-prepublish: compile
+prepublish: build
 precommit: lint-staged type test documentation
 
 commitlint:
@@ -10,8 +10,8 @@ commitlint:
 commitlint-ci:
 	yarn commitlint --from="${TRAVIS_BRANCH}" --to="${TRAVIS_COMMIT}"
 	yarn commitlint --from=${TRAVIS_COMMIT}
-compile:
-	yarn flow-remove-types -p src -i .test.js -d lib
+build:
+	yarn babel src -d lib
 documentation:
 	yarn emdaer
 	git add *.md

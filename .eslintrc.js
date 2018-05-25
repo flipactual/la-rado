@@ -1,8 +1,8 @@
 module.exports = {
   parser: 'babel-eslint',
-  env: { 'jest/globals': true },
+  env: { node: true, 'jest/globals': true },
   plugins: ['jest', 'prettier', 'flowtype'],
-  extends: ['airbnb-base', 'prettier', 'prettier/flowtype'],
+  extends: ['problems', 'plugin:prettier/recommended'],
   rules: {
     'require-jsdoc': [
       2,
@@ -14,6 +14,5 @@ module.exports = {
         },
       },
     ],
-    'prettier/prettier': ['error', { trailingComma: 'es5', singleQuote: true }],
   },
 };
