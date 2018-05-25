@@ -28,7 +28,7 @@ class LaRado {
    * store via the update method
    * 
    * @param {Subscriber} subscriber - The subscriber to add
-   * @returns {Function} - A function which cancels the subscription when called 
+   * @returns {Function} - A function that cancels the subscription when called 
    * @example
    * const subscriber = console.log;
    * const cancel = Store.subscribe(subscriber);
