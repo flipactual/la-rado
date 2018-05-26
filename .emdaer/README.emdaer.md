@@ -3,7 +3,6 @@
   - src: https://raw.githubusercontent.com/okaysoftware/iom/master/iom.svg?sanitize=true 
     alt: iom
     align: center
-    width: 128 
 -->
 
 # <!--emdaer-p
