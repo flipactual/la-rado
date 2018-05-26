@@ -5,12 +5,12 @@
 -->
 
 <!--
-  emdaerHash:d78cbded2049a7fc547077c11732903f
+  emdaerHash:9e7215be25bb1828a6ece7cf4b355497
 -->
 
-<h1 id="iom-travis-bundlephobia-node-npm">iom · <a href="https://travis-ci.org/okaysoftware/iom/"><img src="https://img.shields.io/travis/okaysoftware/iom.svg?style=flat-square" alt="Travis"></a> <a href="https://bundlephobia.com/result?p=iom"><img src="https://img.shields.io/bundlephobia/minzip/iom.svg?style=flat-square" alt="bundlephobia"></a> <a href="http://npmjs.com/package/iom"><img src="https://img.shields.io/node/v/iom.svg?style=flat-square" alt="Node"></a> <a href="http://npmjs.com/package/iom"><img src="https://img.shields.io/npm/v/iom.svg?style=flat-square" alt="NPM"></a></h1>
-<p align="right"><img src="https://raw.githubusercontent.com/okaysoftware/iom/master/iom.svg?sanitize=true" alt="iom"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/okaysoftware/iom/master/iom.svg?sanitize=true" alt="iom" width="128"></p>
 
+<h1 id="iom-travis-bundlephobia-node-npm">iom · <a href="https://travis-ci.org/okaysoftware/iom/"><img src="https://img.shields.io/travis/okaysoftware/iom.svg?style=flat-square" alt="Travis"></a> <a href="https://bundlephobia.com/result?p=iom"><img src="https://img.shields.io/bundlephobia/minzip/iom.svg?style=flat-square" alt="bundlephobia"></a> <a href="http://npmjs.com/package/iom"><img src="https://img.shields.io/node/v/iom.svg?style=flat-square" alt="Node"></a> <a href="http://npmjs.com/package/iom"><img src="https://img.shields.io/npm/v/iom.svg?style=flat-square" alt="NPM"></a></h1>
 <blockquote>
 <p>iom is Esperanto for “a little” 😉</p>
 </blockquote>
