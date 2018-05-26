@@ -1,8 +1,8 @@
 {
-  "name": "la-rado",
-  "version": "1.0.0-rc.15",
-  "description": "State management... again",
-  "repository": "flipactual/la-rado",
+  "name": "iom",
+  "version": "1.0.0-rc.16",
+  "description": "🐣🔤🚀Tiny, simple, over-powered state management",
+  "repository": "okaysoftware/iom",
   "author": "Flip",
   "license": "MIT",
   "main": "lib/index.js",
