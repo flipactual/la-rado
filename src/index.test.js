@@ -1,9 +1,9 @@
 const crypto = require('crypto');
 const Future = require('fluture');
 
-const LaRado = require('.');
+const Store = require('.');
 
-describe('LaRado', () => {
+describe('Store', () => {
   it('dispatches after actions', () => {
     expect.assertions(4);
     // Setup initial state
@@ -11,22 +11,22 @@ describe('LaRado', () => {
     // Setup actions
     const toggleOn = state => ({ ...state, on: !state.on });
     // Setup store
-    const Store = new LaRado(INITIAL_STATE);
+    const store = new Store(INITIAL_STATE);
     // Setup subscription
     const subscriber = jest.fn();
-    Store.subscribe(subscriber);
+    store.subscribe(subscriber);
 
     // Confirm that subscriber is called when added
     expect(subscriber).toHaveBeenLastCalledWith({ on: false });
 
     // Perform an update
-    Store.update(toggleOn);
+    store.update(toggleOn);
     expect(subscriber).toHaveBeenLastCalledWith({ on: true });
 
     // Toggle it a few times to be sure
-    Store.update(toggleOn);
+    store.update(toggleOn);
     expect(subscriber).toHaveBeenLastCalledWith({ on: false });
-    Store.update(toggleOn);
+    store.update(toggleOn);
     expect(subscriber).toHaveBeenLastCalledWith({ on: true });
   });
   it('has cancelable subscribers', () => {
@@ -36,27 +36,27 @@ describe('LaRado', () => {
     // Setup actions
     const toggleOn = state => ({ ...state, on: !state.on });
     // Setup store
-    const Store = new LaRado(INITIAL_STATE);
+    const store = new Store(INITIAL_STATE);
     // Setup subscription
     const subscriber1 = jest.fn();
     const subscriber2 = jest.fn();
     const subscriber3 = jest.fn();
-    Store.subscribe(subscriber1);
-    const cancel = Store.subscribe(subscriber2);
-    Store.subscribe(subscriber3);
+    store.subscribe(subscriber1);
+    const cancel = store.subscribe(subscriber2);
+    store.subscribe(subscriber3);
 
     // Confirm that subscriber is called when added
     expect(subscriber2).toHaveBeenLastCalledWith({ on: false });
 
     // Perform an update
-    Store.update(toggleOn);
+    store.update(toggleOn);
     expect(subscriber2).toHaveBeenLastCalledWith({ on: true });
 
     // Unsubscribe
     cancel();
 
     // Perform another update
-    Store.update(toggleOn);
+    store.update(toggleOn);
     expect(subscriber1).toHaveBeenLastCalledWith({ on: false });
     expect(subscriber2).toHaveBeenLastCalledWith({ on: true });
     expect(subscriber3).toHaveBeenLastCalledWith({ on: false });
@@ -76,10 +76,10 @@ describe('LaRado', () => {
     // Setup actions
     const actions = properties.map(val => state => ({ ...state, [val]: true }));
     // Setup store
-    const Store = new LaRado(INITIAL_STATE);
+    const store = new Store(INITIAL_STATE);
     // Setup subscription
     const subscriber = jest.fn();
-    Store.subscribe(subscriber);
+    store.subscribe(subscriber);
 
     // Perform many updates
     Future.parallel(
@@ -87,7 +87,7 @@ describe('LaRado', () => {
       actions.map(action =>
         Future.node(done =>
           setTimeout(() => {
-            Store.update(action);
+            store.update(action);
             done();
           }, Math.floor(Math.random() * Math.floor(10)))
         )

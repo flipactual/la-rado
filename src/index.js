@@ -10,9 +10,9 @@ const SUBSCRIBERS = Symbol('SUBSCRIBERS');
  * @param {*} state - The initial state
  * @example
  * const INITIAL_STATE = { on: false };
- * const Store = new LaRado(INITIAL_STATE);
+ * const store = new Store(INITIAL_STATE);
  */
-class LaRado {
+class Store {
   /**
    * Create a store
    */
@@ -31,7 +31,7 @@ class LaRado {
    * @returns {Function} - A function that cancels the subscription when called 
    * @example
    * const subscriber = console.log;
-   * const cancel = Store.subscribe(subscriber);
+   * const cancel = store.subscribe(subscriber);
    * // do some things
    * cancel();
    */
@@ -52,7 +52,7 @@ class LaRado {
    * @param {Action} action - The action to take on the state
    * @example
    * const toggleOn = state => ({ ...state, on: !state.on });
-   * Store.update(toggleOn);
+   * store.update(toggleOn);
    */
   update(action) {
     this[STATE] = action(this[STATE]);
@@ -60,18 +60,18 @@ class LaRado {
   }
 }
 
-module.exports = LaRado;
+module.exports = Store;
 
 /** 
  * @name Subscriber
  * @function
  * @param {*} state - The updated state
- * @see LaRado#subscribe
+ * @see Store#subscribe
  */
 
 /** 
  * @name Action 
  * @function
  * @param {*} state - The current state
- * @see LaRado#update
+ * @see Store#update
  */

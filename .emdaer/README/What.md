@@ -1,1 +1,1 @@
-> La Rado is Esperanto for "The Wheel" 😉
+> iom is Esperanto for "a little" 😉
