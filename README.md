@@ -5,7 +5,7 @@
 -->
 
 <!--
-  emdaerHash:c497e7cd622a2c7668b8f0bd183ca59d
+  emdaerHash:104015a724faa51bc34d79690d21e42e
 -->
 
 <p align="center"><img src="https://raw.githubusercontent.com/okaysoftware/iom/master/iom.svg?sanitize=true" alt="iom"></p>
@@ -30,12 +30,12 @@
 <p>Import iom</p>
 
 ```js
-const Store = require('iom');
+import Store from 'iom';
 ```
 <p>Describe the initial state… may as well save it somewhere, right?</p>
 
 ```js
-const INITIAL_STATE = Object.freeze({ on: false });
+const INITIAL_STATE = { on: false };
 ```
 <p>Create the store by passing the initial state into the constructor</p>
 

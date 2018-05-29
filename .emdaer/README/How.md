@@ -9,13 +9,13 @@ If you're wondering how state management can be over-powered...
 Import iom
 
 ```js
-const Store = require('iom');
+import Store from 'iom';
 ```
 
 Describe the initial state... may as well save it somewhere, right?
 
 ```js
-const INITIAL_STATE = Object.freeze({ on: false });
+const INITIAL_STATE = { on: false };
 ```
 
 Create the store by passing the initial state into the constructor
