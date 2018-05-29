@@ -5,29 +5,28 @@
     align: center
 -->
 
-# <!--emdaer-p
-  - '@emdaer/plugin-value-from-package'
-  - value: name
---> · <!--emdaer-p
-  - '@emdaer/plugin-shields'
-  - shields:
-    - alt: 'Travis'
-      image: 'travis/okaysoftware/iom.svg'
-      link: 'https://travis-ci.org/okaysoftware/iom/'
-      style: 'flat-square'
-    - alt: 'bundlephobia'
-      image: 'bundlephobia/minzip/iom.svg'
-      link: 'https://bundlephobia.com/result?p=iom'
-      style: 'flat-square'
-    - alt: 'Node'
-      image: 'node/v/iom.svg'
-      link: 'http://npmjs.com/package/iom'
-      style: 'flat-square'
-    - alt: 'NPM'
-      image: 'npm/v/iom.svg'
-      link: 'http://npmjs.com/package/iom'
-      style: 'flat-square'
--->
+<p align="center">
+  <!--emdaer-p
+    - '@emdaer/plugin-shields'
+    - shields:
+      - alt: 'Travis'
+        image: 'travis/okaysoftware/iom.svg'
+        link: 'https://travis-ci.org/okaysoftware/iom/'
+        style: 'flat-square'
+      - alt: 'bundlephobia'
+        image: 'bundlephobia/minzip/iom.svg'
+        link: 'https://bundlephobia.com/result?p=iom'
+        style: 'flat-square'
+      - alt: 'Node'
+        image: 'node/v/iom.svg'
+        link: 'http://npmjs.com/package/iom'
+        style: 'flat-square'
+      - alt: 'NPM'
+        image: 'npm/v/iom.svg'
+        link: 'http://npmjs.com/package/iom'
+        style: 'flat-square'
+  -->
+</p>
 
 <!--emdaer-p
   - '@emdaer/plugin-import'
