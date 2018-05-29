@@ -1,8 +1,10 @@
 ## How
 
+### A Quick Example
+
 If you're wondering how state management can be over-powered...
 
-### 1. Let's create a new store...
+#### 1. Let's create a new store...
 
 Import iom
 
@@ -24,7 +26,7 @@ const store = new Store(INITIAL_STATE);
 
 Now you have a store
 
-### 2. And subscribe to the store...
+#### 2. And subscribe to the store...
 
 We'll just send state updates to the console for now
 
@@ -41,7 +43,7 @@ const cancel = store.subscribe(subscriber);
 
 All subscribers receive the current state when added to the store
 
-### 3. And update the state...
+#### 3. And update the state...
 
 This is where iom likely diverges from state managers you've used before
 
@@ -64,7 +66,7 @@ store.update(toggleOn);
 
 And that's iom!
 
-### 4. And clean up
+#### 4. And clean up
 
 You can add and remove subscribers at any point
 
@@ -73,5 +75,16 @@ So let's cancel our subscription now that we're done
 ```js
 cancel();
 ```
+#### 5. [Then read the docs!](https://okaysoftware.github.io/iom/)
 
-### 5. [Then read the docs!](https://okaysoftware.github.io/iom/)
+### Purity and Stack Safety
+
+Purity and stack safety are up to you 
+
+#### Purity
+
+If you're using a mutable data structure for your state, be mindful and don't mutate it
+
+#### Stack Safety
+
+Don't call actions from within subscribers or other actions or you are very likely to encounter infinite loops
