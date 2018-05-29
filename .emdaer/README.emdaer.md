@@ -1,6 +1,6 @@
 <!--emdaer-p
   - '@emdaer/plugin-image'
-  - src: https://raw.githubusercontent.com/okaysoftware/iom/master/carbon.svg?sanitize=true 
+  - src: https://raw.githubusercontent.com/okaysoftware/iom/master/carbon.png?sanitize=true 
     alt: iom
     align: center
 -->
