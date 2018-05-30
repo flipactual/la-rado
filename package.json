@@ -22,6 +22,7 @@
     "@babel/node": "7.0.0-beta.48",
     "@babel/preset-env": "7.0.0-beta.48",
     "@babel/preset-flow": "7.0.0-beta.48",
+    "@commitlint/cli": "^6.2.0",
     "@commitlint/config-angular": "4.3.0",
     "@emdaer/cli": "3.2.1",
     "@emdaer/plugin-image": "3.2.1",
@@ -33,7 +34,6 @@
     "babel-eslint": "8.2.3",
     "babel-jest": "23.0.0",
     "babel-preset-minify": "0.4.3",
-    "commitlint": "5.0.1",
     "documentation": "6.3.3",
     "eslint": "^4.19.1",
     "eslint-config-prettier": "2.9.0",
@@ -49,7 +49,6 @@
     "lint-staged": "7.1.2",
     "prettier": "1.7.3",
     "semantic-release": "^15.5.0",
-    "semantic-release-cli": "^4.0.1",
-    "travis-deploy-once": "^5.0.0"
+    "semantic-release-cli": "^4.0.1"
   }
 }

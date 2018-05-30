@@ -6,10 +6,17 @@ prepublish: build
 precommit: lint-staged type test documentation
 
 commitlint:
-	yarn commitlint -e ${GIT_PARAMS}
+	yarn commitlint \
+		--config config/commitlint.config.js \
+		--edit ${GIT_PARAMS}
 commitlint-ci:
-	yarn commitlint --from="${TRAVIS_BRANCH}" --to="${TRAVIS_COMMIT}"
-	yarn commitlint --from=${TRAVIS_COMMIT}
+	yarn commitlint \
+		--config config/commitlint.config.js \
+		--from="${TRAVIS_BRANCH}" \
+		--to="${TRAVIS_COMMIT}"
+	yarn commitlint \
+		--config config/commitlint.config.js \
+		--from=${TRAVIS_COMMIT}
 build:
 	yarn babel \
 		--config-file ./config/.babelrc.js \
