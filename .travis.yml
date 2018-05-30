@@ -1,5 +1,20 @@
 language: node_js
+if: tag IS blank
+cache:
+  directories:
+    - ~/.npm
+notifications:
+  email: false
 node_js:
-  - "8.9"
-script:
-  - make ci
+  - 8.9 
+  - 9
+  - 10
+script: make ci
+jobs:
+  include:
+    - if: type != pull_request AND branch = master
+      stage: Publish to Yarn
+      script: .travis/after_success.sh
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/

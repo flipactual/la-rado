@@ -1,6 +1,6 @@
 {
   "name": "iom",
-  "version": "1.0.0-rc.20",
+  "version": "0.0.0-development",
   "description": "🐣🔤🚀Tiny, simple, over-powered state management",
   "repository": "okaysoftware/iom",
   "author": "Flip",
@@ -12,7 +12,9 @@
   "scripts": {
     "commitmsg": "make commitmsg",
     "precommit": "make precommit",
-    "prepublish": "make prepublish"
+    "prepublish": "make prepublish",
+    "semantic-release": "semantic-release",
+    "travis-deploy-once": "travis-deploy-once"
   },
   "devDependencies": {
     "@babel/cli": "7.0.0-beta.48",
@@ -45,6 +47,9 @@
     "husky": "0.14.3",
     "jest": "23.0.0",
     "lint-staged": "7.1.2",
-    "prettier": "1.7.3"
+    "prettier": "1.7.3",
+    "semantic-release": "^15.5.0",
+    "semantic-release-cli": "^4.0.1",
+    "travis-deploy-once": "^5.0.0"
   }
 }

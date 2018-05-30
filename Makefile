@@ -21,6 +21,8 @@ lint:
 	yarn eslint .
 lint-staged:
 	yarn lint-staged
+release:
+	yarn semantic-release
 test:
 	yarn jest
 type:
