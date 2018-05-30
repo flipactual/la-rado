@@ -25,7 +25,9 @@ build:
 documentation:
 	yarn emdaer
 	git add *.md
-	yarn documentation build src/** -f html -o docs 
+	yarn documentation build src/** \
+		-f html \
+		-o docs 
 	git add docs
 lint:
 	yarn eslint \
@@ -38,6 +40,7 @@ lint-staged:
 release:
 	yarn semantic-release
 test:
-	yarn jest
+	yarn jest \
+		--config config/jest.config.js
 type:
 	yarn flow status
