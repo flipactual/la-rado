@@ -1,5 +1,5 @@
-const STATE = Symbol('STATE');
-const SUBSCRIBERS = Symbol('SUBSCRIBERS');
+const STATE = Symbol("STATE");
+const SUBSCRIBERS = Symbol("SUBSCRIBERS");
 
 /**
  * Create a store

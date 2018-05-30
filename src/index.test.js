@@ -1,10 +1,10 @@
-const crypto = require('crypto');
-const Future = require('fluture');
+const crypto = require("crypto");
+const Future = require("fluture");
 
-const Store = require('.');
+const Store = require(".");
 
-describe('Store', () => {
-  it('dispatches after actions', () => {
+describe("Store", () => {
+  it("dispatches after actions", () => {
     expect.assertions(4);
     // Setup initial state
     const INITIAL_STATE = { on: false };
@@ -29,7 +29,7 @@ describe('Store', () => {
     store.update(toggleOn);
     expect(subscriber).toHaveBeenLastCalledWith({ on: true });
   });
-  it('has cancelable subscribers', () => {
+  it("has cancelable subscribers", () => {
     expect.assertions(5);
     // Setup initial state
     const INITIAL_STATE = { on: false };
@@ -61,12 +61,12 @@ describe('Store', () => {
     expect(subscriber2).toHaveBeenLastCalledWith({ on: true });
     expect(subscriber3).toHaveBeenLastCalledWith({ on: false });
   });
-  it('handles many asynchronous updates', testDone => {
+  it("handles many asynchronous updates", testDone => {
     expect.assertions(2);
     const UPDATE_COUNT = 1e3;
     // Setup properties
     const properties = [...Array(UPDATE_COUNT)].map(() =>
-      crypto.randomBytes(20).toString('hex')
+      crypto.randomBytes(20).toString("hex")
     );
     // Setup initial state
     const INITIAL_STATE = properties.reduce(
