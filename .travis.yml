@@ -13,8 +13,8 @@ script: make ci
 jobs:
   include:
     - if: type != pull_request AND branch = master
-      stage: Publish to Yarn
-      script: .travis/after_success.sh
+      stage: Publish
+      script: yarn semantic-release 
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
