@@ -1,6 +1,6 @@
 module.exports = {
-  extends: ['@commitlint/config-angular'],
+  extends: ["@commitlint/config-angular"],
   rules: {
-    'header-max-length': [2, 'always', 100],
-  },
+    "header-max-length": [2, "always", 100]
+  }
 };
