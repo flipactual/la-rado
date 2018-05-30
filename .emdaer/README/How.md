@@ -6,7 +6,7 @@ If you're wondering how state management can be over-powered...
 
 <!--emdaer-p
   - '@emdaer/plugin-image'
-  - src: https://raw.githubusercontent.com/okaysoftware/iom/master/carbon.png?sanitize=true 
+  - src: https://raw.githubusercontent.com/okaysoftware/iom/master/images/carbon.png?sanitize=true 
     alt: A Quick Example 
     align: center
 -->
