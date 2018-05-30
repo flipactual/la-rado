@@ -35,7 +35,7 @@
     "babel-preset-minify": "0.4.3",
     "commitlint": "5.0.1",
     "documentation": "6.3.3",
-    "eslint": "4.19.1",
+    "eslint": "^4.19.1",
     "eslint-config-prettier": "2.9.0",
     "eslint-config-problems": "0.1.1",
     "eslint-plugin-babel": "5.1.0",

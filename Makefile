@@ -18,7 +18,11 @@ documentation:
 	yarn documentation build src/** -f html -o docs 
 	git add docs
 lint:
-	yarn eslint .
+	yarn eslint \
+		--config config/.eslintrc.js \
+		--ignore-path config/.eslintignore \
+		.	\
+		--ext .js
 lint-staged:
 	yarn lint-staged
 release:
