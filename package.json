@@ -12,9 +12,7 @@
   "scripts": {
     "commitmsg": "make commitmsg",
     "precommit": "make precommit",
-    "prepublish": "make prepublish",
-    "semantic-release": "semantic-release",
-    "travis-deploy-once": "travis-deploy-once"
+    "prepublish": "make prepublish"
   },
   "devDependencies": {
     "@babel/cli": "7.0.0-beta.48",
