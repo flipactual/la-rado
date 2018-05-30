@@ -36,7 +36,8 @@ lint:
 		.	\
 		--ext .js
 lint-staged:
-	yarn lint-staged
+	yarn lint-staged \
+		--config config/lint-staged.config.js
 release:
 	yarn semantic-release
 test:
