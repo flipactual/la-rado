@@ -11,7 +11,10 @@ commitlint-ci:
 	yarn commitlint --from="${TRAVIS_BRANCH}" --to="${TRAVIS_COMMIT}"
 	yarn commitlint --from=${TRAVIS_COMMIT}
 build:
-	yarn babel src -d lib
+	yarn babel \
+		--config-file ./config/.babelrc.js \
+		src \
+		--out-dir lib
 documentation:
 	yarn emdaer
 	git add *.md

@@ -12,5 +12,5 @@ module.exports = {
     '@babel/preset-flow',
     'babel-preset-minify',
   ],
-  ignore: ['**/*.test.js'],
+  ignore: ['../**/*.test.js'],
 };
