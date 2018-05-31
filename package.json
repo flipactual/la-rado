@@ -28,6 +28,7 @@
     "@emdaer/plugin-license-reference": "3.2.1",
     "@emdaer/plugin-shields": "3.2.1",
     "@emdaer/plugin-value-from-package": "3.2.1",
+    "@emdaer/transform-table-of-contents": "^3.2.3",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "8.2.3",
     "babel-jest": "23.0.0",

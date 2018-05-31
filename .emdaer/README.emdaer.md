@@ -51,3 +51,7 @@
 <!--emdaer-p
   - '@emdaer/plugin-license-reference'
 -->
+
+<!--emdaer-t
+  - '@emdaer/transform-table-of-contents'
+-->
