@@ -92,6 +92,7 @@ cancel();
     alt: React contexts/store.js
     align: center
 -->
+
 ```js
 // src/contexts/store.js
 
@@ -102,7 +103,6 @@ export const INITIAL_STATE = { on: false };
 export const store = new Store(INITIAL_STATE);
 
 export const { Provider, Consumer } = createContext(INITIAL_STATE);
-
 ```
 
 <!--emdaer-p

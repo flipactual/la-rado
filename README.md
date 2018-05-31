@@ -5,7 +5,7 @@
 -->
 
 <!--
-  emdaerHash:48c68861fdb00cd9490d88fc0e4324c4
+  emdaerHash:bb9bde0a38b6a12e44cb3543a5234483
 -->
 
 <p align="center"><img src="https://raw.githubusercontent.com/okaysoftware/iom/master/images/iom.svg?sanitize=true" alt="iom"></p>
@@ -89,17 +89,19 @@ cancel();
 <h4 id="5-then-read-the-docs-">5. <a href="https://okaysoftware.github.io/iom/">Then read the docs!</a></h4>
 <h3 id="usage-with-react">Usage with React</h3>
 <p align="center"><img src="https://raw.githubusercontent.com/okaysoftware/iom/master/images/react-store.png?sanitize=true" alt="React contexts/store.js"></p>
-<code>js
+
+
+```js
 // src/contexts/store.js
 
-import Store from &quot;iom&quot;;
-import { createContext } from &quot;react&quot;;
+import Store from "iom";
+import { createContext } from "react";
 
 export const INITIAL_STATE = { on: false };
 export const store = new Store(INITIAL_STATE);
 
-export const { Provider, Consumer } = createContext(INITIAL_STATE);</code>
-
+export const { Provider, Consumer } = createContext(INITIAL_STATE);
+```
 <p align="center"><img src="https://raw.githubusercontent.com/okaysoftware/iom/master/images/react-app.png?sanitize=true" alt="React App.js"></p>
 
 
