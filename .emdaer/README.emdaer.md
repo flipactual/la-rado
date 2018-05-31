@@ -28,6 +28,10 @@
   -->
 </p>
 
+<!--emdaer-t
+  - '@emdaer/transform-table-of-contents'
+-->
+
 <!--emdaer-p
   - '@emdaer/plugin-import'
   - path: .emdaer/README/What.md
@@ -50,8 +54,4 @@
 
 <!--emdaer-p
   - '@emdaer/plugin-license-reference'
--->
-
-<!--emdaer-t
-  - '@emdaer/transform-table-of-contents'
 -->
