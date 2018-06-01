@@ -25,10 +25,6 @@ build:
 documentation:
 	yarn emdaer
 	git add *.md
-	yarn documentation build src/** \
-		-f html \
-		-o docs 
-	git add docs
 lint:
 	yarn eslint \
 		--config config/.eslintrc.js \
