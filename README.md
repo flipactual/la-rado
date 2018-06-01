@@ -5,7 +5,7 @@
 -->
 
 <!--
-  emdaerHash:e298bf6d3ea944d6b83fce3d01b08790
+  emdaerHash:1bde12764622975869e53b8c63d3f520
 -->
 
 <p align="center"><img src="https://raw.githubusercontent.com/okaysoftware/iom/master/images/iom.svg?sanitize=true" alt="iom"></p>
@@ -24,7 +24,7 @@
 <li><a href="#2-and-subscribe-to-the-store">2. And subscribe to the store…</a></li>
 <li><a href="#3-and-update-the-state">3. And update the state…</a></li>
 <li><a href="#4-and-clean-up">4. And clean up</a></li>
-<li><a href="#5-then-read-the-docshttpsokaysoftwaregithubioiom">5. <a href="https://okaysoftware.github.io/iom/">Then read the docs!</a></a></li>
+<li><a href="#5-then-read-the-docshttpsokaysoftwaregithubioiomapi">5. <a href="https://okaysoftware.github.io/iom/API">Then read the docs!</a></a></li>
 </ul>
 </li>
 <li><a href="#usage-with-react">Usage with React</a></li>
@@ -109,7 +109,7 @@ store.update(toggleOn);
 ```js
 cancel();
 ```
-<h4 id="5-then-read-the-docs-">5. <a href="https://okaysoftware.github.io/iom/">Then read the docs!</a></h4>
+<h4 id="5-then-read-the-docs-">5. <a href="https://okaysoftware.github.io/iom/API">Then read the docs!</a></h4>
 <h3 id="usage-with-react">Usage with React</h3>
 <p align="center"><img src="https://raw.githubusercontent.com/okaysoftware/iom/master/images/react-store.png?sanitize=true" alt="React contexts/store.js"></p>
 

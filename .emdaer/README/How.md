@@ -82,7 +82,8 @@ So let's cancel our subscription now that we're done
 ```js
 cancel();
 ```
-#### 5. [Then read the docs!](https://okaysoftware.github.io/iom/)
+
+#### 5. [Then read the docs!](https://okaysoftware.github.io/iom/API)
 
 ### Usage with React
 
