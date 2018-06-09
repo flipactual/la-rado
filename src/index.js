@@ -1,6 +1,3 @@
-const STATE = Symbol("STATE");
-const SUBSCRIBERS = Symbol("SUBSCRIBERS");
-
 /**
  * Create a store
  *
@@ -16,9 +13,9 @@ class Store {
   /**
    * Create a store
    */
-  constructor(state = {}) {
-    this[STATE] = state;
-    this[SUBSCRIBERS] = new Set();
+  constructor(state) {
+    this.state = state;
+    this.subscribers = new Set();
   }
   /**
    * Add a subscriber to the store
@@ -36,11 +33,9 @@ class Store {
    * cancel();
    */
   subscribe(subscriber) {
-    this[SUBSCRIBERS].add(subscriber);
-    subscriber(this[STATE]);
-    return () => {
-      this[SUBSCRIBERS].delete(subscriber);
-    };
+    this.subscribers.add(subscriber);
+    subscriber(this.state);
+    return () => this.subscribers.delete(subscriber);
   }
   /**
    * Perform an action on the state and update all subscribers with the
@@ -55,8 +50,8 @@ class Store {
    * store.update(toggleOn);
    */
   update(action) {
-    this[STATE] = action(this[STATE]);
-    this[SUBSCRIBERS].forEach(subscriber => subscriber(this[STATE]));
+    this.state = action(this.state);
+    this.subscribers.forEach(subscriber => subscriber(this.state));
   }
 }
 
