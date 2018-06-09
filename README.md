@@ -5,7 +5,7 @@
 -->
 
 <!--
-  emdaerHash:6b2b78b0e1aeda1009f1480bf1b6abb9
+  emdaerHash:b8aeca9d50cd465de7ffe9c75c4e7701
 -->
 
 <p align="center"><img src="https://raw.githubusercontent.com/okaysoftware/iom/master/images/iom.svg?sanitize=true" alt="iom"></p>
@@ -47,7 +47,7 @@
 <p>First of all, I didn’t need to and other options may very well better suit your needs</p>
 <p>But, since you asked:</p>
 <ul>
-<li>🐣 it’s tiny (~¼kB last time I checked) </li>
+<li>🐣 it’s tiny (~⅕kB last time I checked) </li>
 <li>🔤 it’s simple (one class whose instances surface only two methods)</li>
 <li>🚀 it’s op af (caveat being that there’s no hand-holding whatsoever)</li>
 </ul>
