@@ -1,10 +1,14 @@
+.emdaer
 coverage
 docs
-.babelrc
+images
+src
+.babelrc.js
 .eslintignore
-.eslintrc
+.eslintrc.js
 .flowconfig
 .gitignore
 .travis.yml
+commitlint.config.js
 jest.config.js
 lint-staged.config.js
