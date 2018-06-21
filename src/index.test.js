@@ -1,5 +1,4 @@
 const crypto = require("crypto");
-const Future = require("fluture");
 
 const Store = require(".");
 
@@ -82,17 +81,17 @@ describe("Store", () => {
     store.subscribe(subscriber);
 
     // Perform many updates
-    Future.parallel(
-      UPDATE_COUNT,
-      actions.map(action =>
-        Future.node(done =>
-          setTimeout(() => {
-            store.update(action);
-            done();
-          }, Math.floor(Math.random() * Math.floor(10)))
-        )
+    Promise.all(
+      actions.map(
+        action =>
+          new Promise(resolve =>
+            setTimeout(() => {
+              store.update(action);
+              resolve();
+            }, Math.floor(Math.random() * Math.floor(10)))
+          )
       )
-    ).fork(jest.fn(), () => {
+    ).then(() => {
       // Confirm that subscriber is called when added
       expect(subscriber).toHaveBeenCalledTimes(UPDATE_COUNT + 1);
       expect(subscriber).toHaveBeenLastCalledWith(
