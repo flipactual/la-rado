@@ -5,7 +5,7 @@
 -->
 
 <!--
-  emdaerHash:2fe4c7af494fa8aad704069dca53aa3d
+  emdaerHash:90126c5a8185c978f1cc28978c119243
 -->
 
 <h1 id="api">API</h1>
@@ -16,7 +16,7 @@
 store</p>
 <p><strong>Parameters</strong></p>
 <ul>
-<li><code>state</code> <strong>any</strong> The initial state</li>
+<li><code>state</code> <strong>State</strong> </li>
 </ul>
 <p><strong>Examples</strong></p>
 
@@ -28,7 +28,7 @@ const store = new Store(INITIAL_STATE);
 <p>Create a store</p>
 <p><strong>Parameters</strong></p>
 <ul>
-<li><code>state</code>  </li>
+<li><code>state</code> <strong>State</strong> </li>
 </ul>
 <h3 id="subscribe">subscribe</h3>
 <p>Add a subscriber to the store</p>
@@ -37,7 +37,7 @@ passed to the subscribe method and B. whenever an action is executed on the
 store via the update method</p>
 <p><strong>Parameters</strong></p>
 <ul>
-<li><code>subscriber</code> <strong><a href="#subscriber">Subscriber</a></strong> The subscriber to add</li>
+<li><code>subscriber</code> <strong>Subscriber</strong> </li>
 </ul>
 <p><strong>Examples</strong></p>
 
@@ -55,7 +55,7 @@ new state</p>
 return the new state</p>
 <p><strong>Parameters</strong></p>
 <ul>
-<li><code>action</code> <strong><a href="#action">Action</a></strong> The action to take on the state</li>
+<li><code>action</code> <strong>Action</strong> </li>
 </ul>
 <p><strong>Examples</strong></p>
 
@@ -63,19 +63,3 @@ return the new state</p>
 const toggleOn = state => ({ ...state, on: !state.on });
 store.update(toggleOn);
 ```
-<h2 id="subscriber">Subscriber</h2>
-<ul>
-<li><strong>See: Store#subscribe</strong></li>
-</ul>
-<p><strong>Parameters</strong></p>
-<ul>
-<li><code>state</code> <strong>any</strong> The updated state</li>
-</ul>
-<h2 id="action">Action</h2>
-<ul>
-<li><strong>See: Store#update</strong></li>
-</ul>
-<p><strong>Parameters</strong></p>
-<ul>
-<li><code>state</code> <strong>any</strong> The current state</li>
-</ul>

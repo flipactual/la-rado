@@ -1,19 +1,28 @@
+/* @flow */
+
+type State = *;
+
+type Subscriber = State => any;
+
+type Action = State => State;
+
 /**
  * Create a store
  *
  * The initial state likely should describe the full intended shape of the 
  * store
  *
- * @param {*} state - The initial state
  * @example
  * const INITIAL_STATE = { on: false };
  * const store = new Store(INITIAL_STATE);
  */
 class Store {
+  state: State;
+  subscribers: Set<Subscriber>;
   /**
    * Create a store
    */
-  constructor(state) {
+  constructor(state: State) {
     this.state = state;
     this.subscribers = new Set();
   }
@@ -24,7 +33,6 @@ class Store {
    * passed to the subscribe method and B. whenever an action is executed on the
    * store via the update method
    * 
-   * @param {Subscriber} subscriber - The subscriber to add
    * @returns {Function} - A function that cancels the subscription when called 
    * @example
    * const subscriber = console.log;
@@ -32,7 +40,7 @@ class Store {
    * // do some things
    * cancel();
    */
-  subscribe(subscriber) {
+  subscribe(subscriber: Subscriber) {
     this.subscribers.add(subscriber);
     subscriber(this.state);
     return () => this.subscribers.delete(subscriber);
@@ -44,29 +52,14 @@ class Store {
    * Actions passed to the update method are called with the current state and
    * return the new state
    * 
-   * @param {Action} action - The action to take on the state
    * @example
    * const toggleOn = state => ({ ...state, on: !state.on });
    * store.update(toggleOn);
    */
-  update(action) {
+  update(action: Action) {
     this.state = action(this.state);
     this.subscribers.forEach(subscriber => subscriber(this.state));
   }
 }
 
 module.exports = Store;
-
-/** 
- * @name Subscriber
- * @function
- * @param {*} state - The updated state
- * @see Store#subscribe
- */
-
-/** 
- * @name Action 
- * @function
- * @param {*} state - The current state
- * @see Store#update
- */
