@@ -17,6 +17,7 @@ commitlint-ci:
 build:
 	yarn babel \
 		src \
+		--ignore '**/*.test.js' \
 		--out-dir lib
 	yarn --silent flow gen-flow-files \
 	  ./src/index.js > ./lib/index.js.flow
