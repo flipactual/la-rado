@@ -10,7 +10,10 @@ module.exports = {
       },
     ],
     '@babel/preset-flow',
-    'babel-preset-minify',
   ],
-  ignore: ['../**/*.test.js'],
+  env: {
+    test: {
+      presets: ['@babel/preset-env', '@babel/preset-react']
+    }
+  },
 };

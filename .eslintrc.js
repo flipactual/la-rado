@@ -1,8 +1,8 @@
 module.exports = {
   parser: 'babel-eslint',
   env: { node: true, 'jest/globals': true },
-  plugins: ['jest', 'prettier', 'flowtype'],
-  extends: ['problems', 'plugin:prettier/recommended'],
+  plugins: ['jest', 'react', 'prettier', 'flowtype'],
+  extends: ['problems', 'plugin:react/recommended', 'plugin:prettier/recommended'],
   rules: {
     'require-jsdoc': [
       2,
