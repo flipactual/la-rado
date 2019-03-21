@@ -1,8 +1,9 @@
 /* eslint-disable require-jsdoc */
 
 const crypto = require("crypto");
-// const React = require("react");
-// const { Component, Fragment, createContext } = React;
+const React = require("react");
+const { Component, Fragment, createContext } = React;
+import { render, fireEvent } from "react-testing-library";
 
 const Store = require(".");
 
@@ -111,38 +112,66 @@ describe("iom", () => {
   });
   describe("w/ React", () => {
     it("works with React", () => {
-      // const INITIAL_STATE = { on: false };
-      // const store = new Store(INITIAL_STATE);
-      // const { Provider, Consumer } = createContext(INITIAL_STATE);
-      // class App extends Component {
-      //   constructor() {
-      //     super();
-      //     this.state = INITIAL_STATE;
-      //   }
-      //   componentDidMount() {
-      //     store.subscribe(state => this.setState(state));
-      //   }
-      //   render() {
-      //     return (
-      //       <Provider value={this.state}>
-      //         <Switch />
-      //       </Provider>
-      //     );
-      //   }
-      // }
-      // class Switch extends Component {
-      //   toggleOn() {
-      //     store.update(state => ({ ...state, on: !state.on }));
-      //   }
-      //   render() {
-      //     return (
-      //       <Fragment>
-      //         <Consumer>{({ on }) => (on ? "🙂" : "🙃")}</Consumer>
-      //         <button onClick={this.toggleOn}>Toggle</button>
-      //       </Fragment>
-      //     );
-      //   }
-      // }
+      const INITIAL_STATE = { on: false };
+      const store = new Store(INITIAL_STATE);
+      const { Provider, Consumer } = createContext(INITIAL_STATE);
+      class App extends Component {
+        constructor() {
+          super();
+          this.state = INITIAL_STATE;
+        }
+        componentDidMount() {
+          store.subscribe(state => this.setState(state));
+        }
+        render() {
+          return (
+            <Provider value={this.state}>
+              <Switch />
+            </Provider>
+          );
+        }
+      }
+      class Switch extends Component {
+        toggleOn() {
+          store.update(state => ({ ...state, on: !state.on }));
+        }
+        render() {
+          return (
+            <Fragment>
+              <Consumer>{({ on }) => (on ? "🙂" : "🙃")}</Consumer>
+              <button onClick={this.toggleOn}>Toggle</button>
+            </Fragment>
+          );
+        }
+      }
+      const { container, getByText } = render(<App />);
+
+      expect(container).toMatchInlineSnapshot(`
+<div>
+  🙃
+  <button>
+    Toggle
+  </button>
+</div>
+`);
+      fireEvent.click(getByText(/Toggle/));
+      expect(container).toMatchInlineSnapshot(`
+<div>
+  🙂
+  <button>
+    Toggle
+  </button>
+</div>
+`);
+      fireEvent.click(getByText(/Toggle/));
+      expect(container).toMatchInlineSnapshot(`
+<div>
+  🙃
+  <button>
+    Toggle
+  </button>
+</div>
+`);
     });
   });
 });
